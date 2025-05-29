@@ -1,0 +1,13 @@
+# Игнорируем старые файлы и ненужные ресурсы
+Delfi Corporate – Advisory Services.html
+Delfi Corporate – Advisory Services_files/
+modern-delfi-corporate.html
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+*.log
+
+# Временные файлы
+*.tmp
+*.temp

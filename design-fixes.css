@@ -1,0 +1,176 @@
+/* Исправления дизайна - унификация контейнеров и плавные переходы */
+
+/* Единая ширина для всех контейнеров */
+.container,
+.nav-container,
+.hero-container,
+.elearning-container,
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Переопределяем специфичные стили для единообразия */
+.services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about .elearning-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Плавные переходы между секциями */
+
+/* Градиент от hero к services */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, rgba(245,245,245,0.3) 50%, var(--neutral-100) 100%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Плавный переход от services к about */
+.services {
+    background: linear-gradient(180deg, var(--neutral-100) 0%, #f8fafc 100%);
+    position: relative;
+}
+
+.services::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent 0%, rgba(248,250,252,0.8) 100%);
+    pointer-events: none;
+}
+
+/* Улучшенный About фон */
+.about {
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+    position: relative;
+}
+
+/* Плавный переход от about к elearning */
+.about::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, rgba(26,26,26,0.1) 30%, rgba(26,26,26,0.5) 70%, var(--neutral-800) 100%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Улучшенный E-learning фон с более мягким переходом */
+.elearning {
+    background: linear-gradient(180deg, var(--neutral-800) 0%, var(--neutral-900) 100%);
+    position: relative;
+}
+
+/* Убираем резкий переход к footer */
+.elearning::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.8) 100%);
+    pointer-events: none;
+}
+
+/* Более мягкий footer */
+.footer {
+    background: linear-gradient(180deg, var(--neutral-900) 0%, #000000 100%);
+}
+
+/* Улучшаем контейнеры карточек для лучшего выравнивания */
+.service-card {
+    width: 100%;
+    max-width: none;
+}
+
+/* Обеспечиваем единообразие padding для всех секций */
+.hero,
+.services,
+.about,
+.elearning {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Убираем старые max-width ограничения для унификации */
+.about .elearning-container {
+    max-width: 1200px !important;
+}
+
+.services-grid {
+    max-width: 1200px !important;
+}
+
+.footer-content {
+    max-width: 1200px !important;
+}
+
+/* Дополнительное выравнивание для мобильных устройств */
+@media (max-width: 768px) {
+    .container,
+    .nav-container,
+    .hero-container,
+    .elearning-container,
+    .footer .container {
+        padding: 0 var(--space-md);
+    }
+    
+    .services-grid {
+        padding: 0 var(--space-md);
+    }
+}
+
+/* Мягкие тени для лучших переходов */
+.services {
+    box-shadow: inset 0 50px 100px -50px rgba(103, 126, 234, 0.1);
+}
+
+.about {
+    box-shadow: inset 0 50px 100px -50px rgba(248, 250, 252, 0.3),
+                inset 0 -50px 100px -50px rgba(26, 26, 26, 0.05);
+}
+
+.elearning {
+    box-shadow: inset 0 50px 100px -50px rgba(203, 213, 225, 0.1);
+}
+
+/* Улучшенные переходы цветов в About секции */
+.about {
+    background: linear-gradient(135deg, 
+        rgba(248,250,252,1) 0%, 
+        rgba(226,232,240,0.8) 30%, 
+        rgba(203,213,225,0.6) 70%, 
+        rgba(148,163,184,0.4) 100%
+    );
+}
+
+/* Более мягкий переход в точечной текстуре */
+.about::before {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="about-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(203,213,225,0.2)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23about-pattern)"/></svg>');
+    opacity: 0.5;
+}

@@ -1,0 +1,254 @@
+/* Улучшения стилей для более красивого дизайна */
+
+/* Улучшенная About секция */
+.about {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="about-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(203,213,225,0.4)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23about-pattern)"/></svg>');
+    opacity: 0.7;
+}
+
+.about .elearning-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: var(--space-3xl);
+}
+
+.about .elearning-content h2 {
+    color: var(--neutral-900);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.about .elearning-description {
+    color: var(--neutral-600);
+    margin-bottom: var(--space-lg);
+    font-size: 1.1rem;
+}
+
+/* Улучшенные ссылки в footer */
+.footer-links a {
+    color: var(--neutral-400);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: var(--space-xs) var(--space-sm);
+    border-left: 3px solid transparent;
+    display: block;
+    border-radius: var(--radius-sm);
+    margin: 2px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(211, 0, 46, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.footer-links a:hover::before {
+    left: 100%;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+    border-left-color: var(--primary-color);
+    background: rgba(211, 0, 46, 0.1);
+    padding-left: var(--space-md);
+    transform: translateX(4px);
+}
+
+.footer-links a i {
+    margin-right: var(--space-sm);
+    width: 16px;
+    text-align: center;
+}
+
+/* Улучшенные контактные ссылки */
+.contact-info a {
+    color: var(--neutral-400);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs);
+    margin: -var(--space-xs);
+}
+
+.contact-info a:hover {
+    color: var(--primary-color);
+    background: rgba(211, 0, 46, 0.1);
+    transform: scale(1.05);
+}
+
+/* Улучшенная сетка карточек */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Более компактный footer */
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Улучшенные заголовки секций */
+.footer-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    color: var(--white);
+    position: relative;
+    padding-bottom: var(--space-xs);
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
+}
+
+/* Улучшенные иконки в footer */
+.contact-info i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(211, 0, 46, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+/* Более красивые hover эффекты для карточек */
+.service-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--neutral-200);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(211, 0, 46, 0.03), transparent);
+    transition: left 0.6s ease;
+}
+
+.service-card:hover::after {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Улучшенные кнопки */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(211, 0, 46, 0.3);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(211, 0, 46, 0.4);
+    background: linear-gradient(45deg, var(--primary-light), var(--accent-color));
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+    
+    .about .elearning-container {
+        gap: var(--space-2xl);
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .contact-info {
+        justify-content: center;
+    }
+}
