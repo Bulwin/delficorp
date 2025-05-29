@@ -40,7 +40,7 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/YOUR_USERNAME/delfi-corporate-website.git
+git clone https://github.com/Bulwin/delficorp.git
 ```
 
 2. Откройте `index.html` в браузере или используйте локальный сервер:
@@ -70,7 +70,7 @@ npx live-server
 
 ## 🌐 Живая демо
 
-Сайт доступен по адресу: [https://YOUR_USERNAME.github.io/delfi-corporate-website](https://YOUR_USERNAME.github.io/delfi-corporate-website)
+Сайт доступен по адресу: [https://bulwin.github.io/delficorp](https://bulwin.github.io/delficorp)
 
 ## 📞 Контакты
 
